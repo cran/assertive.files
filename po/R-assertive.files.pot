@@ -1,0 +1,60 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: assertive.files 0.0-1\n"
+"Report-Msgid-Bugs-To: bugs.r-project.org\n"
+"POT-Creation-Date: 2015-08-30 10:47\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Richard Cotton <richierocks@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+
+msgid "Some or all of the paths specified by %s are not directories."
+msgstr ""
+
+msgid "None of the paths specified by %s are directories."
+msgstr ""
+
+msgid "Some or all of the paths specified by %s are not empty files."
+msgstr ""
+
+msgid "None of the paths specified by %s are empty files."
+msgstr ""
+
+msgid "Some or all of the files specified by %s do not exist."
+msgstr ""
+
+msgid "None of the files specified by %s exist."
+msgstr ""
+
+msgid "Some or all of the paths specified by %s are not executable files."
+msgstr ""
+
+msgid "None of the paths specified by %s are executable."
+msgstr ""
+
+msgid "Some or all of the paths specified by %s are not libraries."
+msgstr ""
+
+msgid "None of the paths specified by %s are libraries."
+msgstr ""
+
+msgid "Some or all of the paths specified by %s are not readable files."
+msgstr ""
+
+msgid "None of the paths specified by %s are readable files."
+msgstr ""
+
+msgid "Some or all of the paths specified by %s are not writable files."
+msgstr ""
+
+msgid "None of the paths specified by %s are writable files."
+msgstr ""
+
+msgid "x is not a file connection."
+msgstr ""
+
+msgid "This function depends on file.access, which can give unexpected results under Windows."
+msgstr ""
