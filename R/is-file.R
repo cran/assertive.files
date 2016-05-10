@@ -72,6 +72,9 @@ is_existing_file <- function(x, .xname = get_name_in_parent(x))
 #' Checks to see if the input files can be executed/read/written to.
 #'
 #' @param x Input to check.
+#' @param warn_about_windows Logical.  If \code{TRUE}, then calling the function
+#' under Windows will throw a warning about the problems with 
+#' \code{\link[base]{file.access}}.
 #' @param severity How severe should the consequences of the assertion be?  
 #' Either \code{"stop"}, \code{"warning"}, \code{"message"}, or \code{"none"}.
 #' @param .xname Not intended to be used directly.
@@ -83,12 +86,15 @@ is_existing_file <- function(x, .xname = get_name_in_parent(x))
 #' @examples
 #' files <- dir()
 #' is_readable_file(files)
-#' is_writable_file(files)
-#' is_executable_file(files)
+#' is_writable_file(files, warn_about_windows = FALSE)
+#' is_executable_file(files, warn_about_windows = FALSE)
 #' @export
-is_executable_file <- function(x, .xname = get_name_in_parent(x))
+is_executable_file <- function(x, warn_about_windows = TRUE, .xname = get_name_in_parent(x))
 {
-  warn_about_file.access_under_windows()
+  if(warn_about_windows)
+  {
+    warn_about_file.access_under_windows()
+  }
   x <- coerce_to(x, "character", .xname)
   call_and_name(
     function(x)
@@ -142,9 +148,12 @@ is_library <- function(x, .xname = get_name_in_parent(x))
 
 #' @rdname is_executable_file
 #' @export
-is_readable_file <- function(x, .xname = get_name_in_parent(x))
+is_readable_file <- function(x, warn_about_windows = TRUE, .xname = get_name_in_parent(x))
 {
-  warn_about_file.access_under_windows()
+  if(warn_about_windows)
+  {
+    warn_about_file.access_under_windows()
+  }
   x <- coerce_to(x, "character", get_name_in_parent(x))  
   call_and_name(
     function(x)
@@ -161,9 +170,12 @@ is_readable_file <- function(x, .xname = get_name_in_parent(x))
 
 #' @rdname is_executable_file
 #' @export
-is_writable_file <- function(x, .xname = get_name_in_parent(x))
+is_writable_file <- function(x, warn_about_windows = TRUE, .xname = get_name_in_parent(x))
 {
-  warn_about_file.access_under_windows()
+  if(warn_about_windows)
+  {
+    warn_about_file.access_under_windows()
+  }
   x <- coerce_to(x, "character", .xname)
   call_and_name(
     function(x)

@@ -57,10 +57,12 @@ is_bzfile_connection <- function(x, .xname = get_name_in_parent(x))
 #' cat("this has no final newline character", file = tcon)
 #' assert_is_incomplete_connection(tcon)
 #' close(tcon)
-#' #These examples should fail.
-#' assertive.base::dont_stop(assert_is_connection("not a connection"))
-#' assertive.base::dont_stop(assert_is_readable_connection(stdout()))
-#' assertive.base::dont_stop(assert_is_writable_connection(stdin()))
+#' # These examples should fail.
+#' assertive.base::dont_stop({
+#'   assert_is_connection("not a connection")
+#'   assert_is_readable_connection(stdout())
+#'   assert_is_writable_connection(stdin())
+#' })
 #' \dontrun{
 #' fcon <- file()
 #' close(fcon)

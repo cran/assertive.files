@@ -9,6 +9,10 @@
 #' otherwise it is closed.
 #' @param upper_is_strict If \code{TRUE}, the upper bound is open (strict)
 #' otherwise it is closed.
+#' @param na_ignore A logical value.  If \code{FALSE}, \code{NA} values
+#' cause an error; otherwise they do not.  Like \code{na.rm} in many
+#' stats package functions, except that the position of the failing
+#' values does not change.
 #' @param severity How severe should the consequences of the assertion be?  
 #' Either \code{"stop"}, \code{"warning"}, \code{"message"}, or \code{"none"}.
 #' @param .xname Not intended to be used directly.
@@ -23,7 +27,7 @@
 #' is_empty_file(tf)
 #' cat("some stuff", file = tf)
 #' is_non_empty_file(tf)
-#' is_file_size_in_range(tf, lower = 100)
+#' assertive.base::dont_stop(assert_all_file_sizes_are_in_range(tf, lower = 100))
 #' unlink(tf)  
 #' @importFrom assertive.base is_true
 #' @export

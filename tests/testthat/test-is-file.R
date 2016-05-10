@@ -33,7 +33,7 @@ test_that("test.is_executable_file.r_exes.returns_true", {
   }
 })
 
-test_that("test.is_existing_file.some_paths.returns_true_when_file_exists", 
+test_that("expect_named(actual)", 
 {
   tf <- tempfile()
   file.create(tf)
@@ -44,7 +44,7 @@ test_that("test.is_existing_file.some_paths.returns_true_when_file_exists",
     assertive.base::strip_attributes(actual <- is_existing_file(x)), 
     expected
   )
-  expect_equal(names(actual), as.character(x))
+  expect_named(actual)
   expect_equal(
     cause(actual),
     noquote(rep.int(c("", "nonexistent"), c(3, 2)))
@@ -59,7 +59,7 @@ test_that("test.is_library.some_paths.returns_true_when_path_is_library", {
     assertive.base::strip_attributes(actual <- is_library(x)), 
     expected
   )
-  expect_equal(names(actual), as.character(x))
+  expect_named(actual)
   expect_equal(
     cause(actual),
     noquote(rep.int(c("", "not a lib"), c(n_libs, 1)))

@@ -79,7 +79,7 @@ assert_any_are_existing_files <- function(x,
 
 #' @rdname is_executable_file
 #' @export
-assert_all_are_executable_files <- function(x, 
+assert_all_are_executable_files <- function(x, warn_about_windows = TRUE, 
   severity = getOption("assertive.severity", "stop"))
 {
   .xname <- get_name_in_parent(x)
@@ -90,6 +90,7 @@ assert_all_are_executable_files <- function(x,
   assert_engine(
     is_executable_file, 
     x, 
+    warn_about_windows = warn_about_windows,
     .xname = .xname,
     msg = msg, 
     severity = severity
@@ -98,7 +99,7 @@ assert_all_are_executable_files <- function(x,
 
 #' @rdname is_executable_file
 #' @export
-assert_any_are_executable_files <- function(x, 
+assert_any_are_executable_files <- function(x, warn_about_windows = TRUE, 
   severity = getOption("assertive.severity", "stop"))
 {
   .xname <- get_name_in_parent(x)
@@ -109,6 +110,7 @@ assert_any_are_executable_files <- function(x,
   assert_engine(
     is_executable_file, 
     x, 
+    warn_about_windows = warn_about_windows,
     .xname = .xname,
     msg = msg, 
     what = "any",
@@ -157,7 +159,7 @@ assert_any_are_libraries <- function(x,
 
 #' @rdname is_executable_file
 #' @export
-assert_all_are_readable_files <- function(x, 
+assert_all_are_readable_files <- function(x, warn_about_windows = TRUE, 
   severity = getOption("assertive.severity", "stop"))
 {
   .xname <- get_name_in_parent(x)
@@ -168,6 +170,7 @@ assert_all_are_readable_files <- function(x,
   assert_engine(
     is_readable_file, 
     x, 
+    warn_about_windows = warn_about_windows,
     .xname = .xname,
     msg = msg, 
     severity = severity
@@ -176,7 +179,7 @@ assert_all_are_readable_files <- function(x,
 
 #' @rdname is_executable_file
 #' @export
-assert_any_are_readable_files <- function(x, 
+assert_any_are_readable_files <- function(x, warn_about_windows = TRUE, 
   severity = getOption("assertive.severity", "stop"))
 {
   .xname <- get_name_in_parent(x)
@@ -187,6 +190,7 @@ assert_any_are_readable_files <- function(x,
   assert_engine(
     is_readable_file, 
     x, 
+    warn_about_windows = warn_about_windows,
     .xname = .xname,
     msg = msg, 
     what = "any",
@@ -196,7 +200,7 @@ assert_any_are_readable_files <- function(x,
 
 #' @rdname is_executable_file
 #' @export
-assert_all_are_writable_files <- function(x, 
+assert_all_are_writable_files <- function(x, warn_about_windows = TRUE, 
   severity = getOption("assertive.severity", "stop"))
 {
   .xname <- get_name_in_parent(x)
@@ -207,6 +211,7 @@ assert_all_are_writable_files <- function(x,
   assert_engine(
     is_writable_file, 
     x, 
+    warn_about_windows = warn_about_windows,
     .xname = .xname,
     msg = msg, 
     severity = severity
@@ -215,7 +220,7 @@ assert_all_are_writable_files <- function(x,
 
 #' @rdname is_executable_file
 #' @export
-assert_any_are_writable_files <- function(x, 
+assert_any_are_writable_files <- function(x, warn_about_windows = TRUE, 
   severity = getOption("assertive.severity", "stop"))
 {
   .xname <- get_name_in_parent(x)
@@ -225,6 +230,7 @@ assert_any_are_writable_files <- function(x,
   assert_engine(
     is_writable_file, 
     x, 
+    warn_about_windows = warn_about_windows,
     .xname = .xname,
     msg = msg, 
     what = "any",
